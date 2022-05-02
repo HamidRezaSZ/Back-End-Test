@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -129,3 +130,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MODELS = os.path.join(BASE_DIR, 'ml/models')
 DATA = os.path.join(BASE_DIR, 'ml/data')
+
+
+cloudinary.config( 
+  cloud_name = "dm6rdomhg", 
+  api_key = "619913231358948", 
+  api_secret = "0e5YsngoybL_yPovK_1MSma6F_0" 
+)
