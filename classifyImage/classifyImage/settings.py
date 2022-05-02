@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'cnn',
     'djoser',
     'drf_yasg',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -170,3 +171,6 @@ SWAGGER_SETTINGS = {
         'patch'
     ],
 }
+
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
