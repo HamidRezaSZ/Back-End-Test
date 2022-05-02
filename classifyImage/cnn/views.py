@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, JSONParser
 import cloudinary.uploader
 import cv2
+from drf_yasg.utils import swagger_auto_schema
+from .serializers import PictureSerializer
 
 
 
@@ -18,9 +20,11 @@ class ClassifyView(APIView):
         JSONParser,
     )
     
-
-    @staticmethod
-    def post(request):
+    @swagger_auto_schema(request_body=PictureSerializer,
+                         responses={200: "success/predict"})
+    
+    
+    def post(self,request):
         
         file = request.data.get('picture')
         upload_data = cloudinary.uploader.upload(file)
